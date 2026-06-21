@@ -4,6 +4,8 @@ def get_range_for_difficulty(difficulty: str):
         return 1, 20
     if difficulty == "Normal":
         return 1, 100
+    # FIX: Refactored logic into logic_utils.py using agent mode
+    # The difficulty range for hard is now 1 - 200
     if difficulty == "Hard":
         return 1, 200
     return 1, 100
@@ -41,6 +43,8 @@ def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
 
+    # FIX: Refactored logic into logic_utils.py using agent mode
+    # When the guess is too high, now the hint says to go lower and vice versa
     try:
         if guess > secret:
             return "Too High", "📉 Go LOWER!"
