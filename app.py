@@ -1,7 +1,7 @@
 import random
 import streamlit as st
 
-from logic_utils import check_guess, parse_guess, update_score
+from logic_utils import get_range_for_difficulty, check_guess, parse_guess, update_score
 
 
 def get_range_for_difficulty(difficulty: str):
